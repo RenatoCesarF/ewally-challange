@@ -3,7 +3,7 @@
 To start the project, first run the installation command
 
 ```
-npm init
+npm install
 //or
 yarn
 ```

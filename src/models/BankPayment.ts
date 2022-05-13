@@ -101,10 +101,6 @@ class BankPayment {
         }
         return data
     }
-
-    toString(): string {
-        return `amount: R$${this.amount} expiration date: ${this.expirationDate}\n code: ${this.barCode}`
-    }
 }
 
 export default BankPayment

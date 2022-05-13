@@ -29,14 +29,19 @@ describe('BankPayment type Dealership  creation Tests', () => {
     const bankPaymentExample = new BankPayment("836200000021292600481009143530930013001904210760")
     const expectedAmountReturn = 229.26
     const expectedBarCodeReturn = "83620000002292600481001435309300100190421076"
-
+    const getDataExpectedReturn = {
+        "amount":expectedAmountReturn,
+        "barCode":expectedBarCodeReturn
+    }
     test(`(Dealership) Bar code from digitable Line should return ${expectedBarCodeReturn}`, ()=>{
         expect(bankPaymentExample.barCode).toBe(expectedBarCodeReturn)
     })
     test(`(Dealership) BankPayment Value from digitable Line should return ${expectedAmountReturn}`, () => {
         expect(bankPaymentExample.amount).toBe(expectedAmountReturn)
     })
-
+    test("(Dealership) BankPayment getData function should return correct info in an object", ()=>{
+        expect(bankPaymentExample.getData()).toStrictEqual(getDataExpectedReturn)
+    })
 })
 
 

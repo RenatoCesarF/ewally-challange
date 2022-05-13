@@ -30,7 +30,7 @@ export default class BankPaymentController implements BaseController {
       const { isValid, errors } = validatePayment({ digitableLine })
 
       if (!isValid) {
-        throw new ServerError(errors, 400, 'ValidationError')
+        throw new ServerError(errors.toString(), 400, 'ValidationError')
       }
 
       const paymentValidation: Validation = DigitableLineValidatorUseCase.exec(digitableLine)
